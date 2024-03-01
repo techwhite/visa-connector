@@ -28,7 +28,7 @@ public class JwtFilter extends GenericFilterBean {
 
         // validate token
         if(authHeader == null || !authHeader.startsWith("Bearer ")){
-            logger.error("Authentication failed: Missing token in header for request:{0}", request);
+            logger.error("Authentication failed: Missing token in header for request:{}", request);
             throw new AuthenticationException("Authentication failed: Missing token in header") {
             };
         }
